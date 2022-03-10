@@ -13,9 +13,8 @@ public class Users implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    private String awsID;
+    private String firebaseUid;
     private String fullName;
-    private String userName;
     private String userEmail;
     private String password;
 
@@ -23,19 +22,17 @@ public class Users implements Serializable {
 
     }
 
-    public Users(Long userId, String fullName, String awsID, String userName, String userEmail, String password) {
+    public Users(Long userId, String fullName, String firebaseUid, String userEmail, String password) {
         this.fullName = fullName;
-        this.awsID = awsID;
+        this.firebaseUid = firebaseUid;
         this.userId = userId;
-        this.userName = userName;
         this.userEmail = userEmail;
         this.password = password;
     }
 
-    public Users(String fullName, String awsID, String userName, String userEmail, String password) {
+    public Users(String fullName, String firebaseUid, String userEmail, String password) {
         this.fullName = fullName;
-        this.awsID = awsID;
-        this.userName = userName;
+        this.firebaseUid = firebaseUid;
         this.userEmail = userEmail;
         this.password = password;
     }
@@ -47,12 +44,12 @@ public class Users implements Serializable {
         return userId;
     }
 
-    public String getAwsID() {
-        return awsID;
+    public String getFirebaseUid() {
+        return firebaseUid;
     }
 
-    public void setAwsID(String awsID) {
-        this.awsID = awsID;
+    public void setFirebaseUid(String awsID) {
+        this.firebaseUid = awsID;
     }
 
     public String getFullName() {
@@ -61,14 +58,6 @@ public class Users implements Serializable {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getUserEmail() {
@@ -91,9 +80,11 @@ public class Users implements Serializable {
     public String toString() {
         return "Users{" +
                 "userId=" + userId +
-                ", userName='" + userName + '\'' +
+                ", firebaseUid='" + firebaseUid + '\'' +
+                ", fullName='" + fullName + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
+
 }
