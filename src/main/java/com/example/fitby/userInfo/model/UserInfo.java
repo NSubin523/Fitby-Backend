@@ -3,42 +3,38 @@ package com.example.fitby.userInfo.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Table
-public class userInfo {
+public class UserInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String firebaseUid;
     private String userEmail;
     private float weight;
-    private byte heightFeet;
-    private byte heightInches;
+    private int height;
     private String sex;
 
-    public userInfo(){
+    public UserInfo(){
     }
 
-    public userInfo(Long userId, String firebaseUid, String userEmail, float weight, byte heightFeet, byte heightInches, String sex){
+    public UserInfo(Long userId, String firebaseUid, String userEmail, float weight, int height, String sex){
         this.userId = userId;
         this.firebaseUid = firebaseUid;
         this.userEmail = userEmail;
         this.weight = weight;
-        this.heightFeet = heightFeet;
-        this.heightInches = heightInches;
         this.sex = sex;
+        this.height = height;
     }
 
-    public userInfo(String firebaseUid, String userEmail, float weight, byte heightFeet, byte heightInches, String sex){
+    public UserInfo(String firebaseUid, String userEmail, float weight,int height, String sex){
         this.firebaseUid = firebaseUid;
         this.userEmail = userEmail;
         this.weight = weight;
-        this.heightFeet = heightFeet;
-        this.heightInches = heightInches;
         this.sex = sex;
+        this.height = height;
     }
 
     public void setUserId(Long userId) {
@@ -69,18 +65,11 @@ public class userInfo {
         this.weight = weight;
     }
 
-    public byte getHeightFeet() {
-        return heightFeet;
+    public int getHeightFeet() {
+        return height;
     }
-    public void setHeightFeet(byte heightFeet) {
-        this.heightFeet = heightFeet;
-    }
-
-    public byte getHeightInches() {
-        return heightInches;
-    }
-    public void setHeightInches(byte heightInches) {
-        this.heightInches = heightInches;
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public String getSex() {
@@ -97,8 +86,7 @@ public class userInfo {
                 ", firebaseUid='" + firebaseUid + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", weight='" + weight + '\'' +
-                ", heightFeet='" + heightFeet + '\'' +
-                ", heightInches='" + heightInches + '\'' +
+                ", height='" + height + '\'' +
                 ", sex='" + sex + '\'' +
                 '}';
     }
