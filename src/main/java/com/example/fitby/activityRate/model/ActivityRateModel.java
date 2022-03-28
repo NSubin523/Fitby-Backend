@@ -10,13 +10,13 @@ import javax.persistence.Table;
 public class ActivityRateModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String activityType;
 
     public ActivityRateModel(){
     }
 
-    public ActivityRateModel(String id, String activityType) {
+    public ActivityRateModel(Long id, String activityType) {
         this.id = id;
         this.activityType = activityType;
     }
@@ -25,11 +25,11 @@ public class ActivityRateModel {
         this.activityType = activityType;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

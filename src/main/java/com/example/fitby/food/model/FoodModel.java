@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class FoodModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String firebaseUid;
     private String name;
     private double calories;
@@ -23,7 +23,7 @@ public class FoodModel {
     public FoodModel(){
     }
 
-    public FoodModel(String id, String firebaseUid, String name, double calories, double carbs, double protein, double fat){
+    public FoodModel(Long id, String firebaseUid, String name, double calories, double carbs, double protein, double fat){
         this.id = id;
         this.firebaseUid = firebaseUid;
         this.name = name;
@@ -42,11 +42,11 @@ public class FoodModel {
         this.fat = fat;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
