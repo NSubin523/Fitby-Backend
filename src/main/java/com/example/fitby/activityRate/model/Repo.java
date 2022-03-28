@@ -1,4 +1,7 @@
 package com.example.fitby.activityRate.model;
 
-public class Repo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Repo extends JpaRepository<ActivityRateModel,Long> {
+
 }
