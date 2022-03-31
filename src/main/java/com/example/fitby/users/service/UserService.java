@@ -25,6 +25,8 @@ public class UserService {
         return userRepo.getById(userId);
     }
 
+    public Users getByUserEmail(String userEmail){return userRepo.getByUserEmail(userEmail); }
+
     public void addOneUser(Users user){
         userRepo.save(user);
     }

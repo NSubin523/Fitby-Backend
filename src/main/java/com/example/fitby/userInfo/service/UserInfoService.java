@@ -1,6 +1,7 @@
 package com.example.fitby.userInfo.service;
 
-import com.example.fitby.users.model.UserRepo;
+import com.example.fitby.userInfo.model.UserInfo;
+import com.example.fitby.userInfo.model.UserInfoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,11 +9,11 @@ import org.springframework.stereotype.Service;
 public class UserInfoService {
 
     @Autowired
-    private final UserRepo userRepo;
+    private final UserInfoRepo userInfoRepo;
 
-    public UserInfoService(UserRepo userRepo) {
-        this.userRepo = userRepo;
-    }
+    public UserInfoService(UserInfoRepo userInfoRepo) {this.userInfoRepo = userInfoRepo;}
+
+    public UserInfo getByEmail(String userEmail){return userInfoRepo.getByUserEmail(userEmail); }
 
 
 }
